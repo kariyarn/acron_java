@@ -50,6 +50,7 @@ public class MemberDao {
          return false;
       }
    }
+   //회원 한 명의 정보를 수정하고 해당 작업의 성공여부를 리턴해주는메소드
    public boolean update(MemberDto dto) {
 		//Member객체에 담긴 정보를 이용해서 회원 정보를 수정해보세요
 		
@@ -86,7 +87,9 @@ public class MemberDao {
 	          return false;
 	       }
    }
-   public boolean delete(MemberDto dto) {
+   //회원 한 명의 정보를 삭제하는 메소드
+   public boolean delete(int num) {
+	   
 		//인자로 전달된 num에 해당하는 회원정보를 삭제하는 기능을 완성해 보세요
 		//DBConnect 클래스를 활용하세요
 		Connection conn = null;
@@ -99,7 +102,7 @@ public class MemberDao {
 			String sql = " DELETE FROM member "
 					+ " WHERE num = ? ";
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setInt(1, dto.getNum());
+			pstmt.setInt(1, num);
 			pstmt.executeUpdate();
 			System.out.println("회원 정보를 삭제했습니다.");
 			
@@ -118,4 +121,5 @@ public class MemberDao {
 	          return false;
 	       }
    }
+
 }

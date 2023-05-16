@@ -29,7 +29,6 @@ public class MainClass12 {
 //		//삭제할 회원의 정보
 //		int num3 = 6;
 //		MemberDto dto3 = new MemberDto();
-//		dto3.setNum(num3);
-//		new MemberDao().delete(dto3);
+//		new MemberDao().delete(num3);
 	}
 }
