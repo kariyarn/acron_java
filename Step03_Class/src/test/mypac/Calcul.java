@@ -8,4 +8,9 @@ public class Calcul {
 		int result = width * height;
 		System.out.println(result);
 	}
+	
+	public int cal2() {
+		int result = width * height;
+		return result;
+	}
 }

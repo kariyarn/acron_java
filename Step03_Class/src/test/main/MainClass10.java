@@ -23,5 +23,10 @@ public class MainClass10 {
 		case2.height = 239;
 		case2.cal();
 		
+		Calcul case3 = new Calcul();
+		case3.width = 123;
+		case3.height = 456;
+		System.out.println(case3.cal2());
+		
 	}
 }
