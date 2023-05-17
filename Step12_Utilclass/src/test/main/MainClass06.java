@@ -37,6 +37,18 @@ public class MainClass06 {
       map1.remove("isMan");
       //모두 삭제 
       map1.clear();
+      
+      HashMap<String, Object> map2 = new HashMap<>();
+      map2.put("num", 1);
+      map2.put("카드명", "티아라멘츠");
+      map2.put("isMotherless", true);
+      map2.put("car", new Car("카타오카"));
+      
+      int num2 = (int)map2.get("num");
+      String name2 = (String)map2.get("name");
+      boolean motheless = (boolean)map2.get("isMotherless");
+      Car car2 = (Car)map2.get("car");
+      
    }
 }
 

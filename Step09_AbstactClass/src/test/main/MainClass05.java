@@ -3,6 +3,12 @@ package test.main;
 import test.mypac.Weapon;
 
 public class MainClass05 {
+	static class antWeapon extends Weapon{
+		@Override
+		public void attack() {
+			System.out.println("개미로 공격");
+		}
+	}
 	static class SeaWeapon extends Weapon{
 		@Override
 		public void attack() {
@@ -14,6 +20,10 @@ public class MainClass05 {
 		Weapon w1 = new SeaWeapon();
 		w1.prepare();
 		w1.attack();
+		
+		Weapon w3 = new antWeapon();
+		w3.prepare();
+		w3.attack();
 		
 		//우주를 공격하는 무기를 만들어서 이용하고 싶다.
 		class SpaceWeapon extends Weapon{

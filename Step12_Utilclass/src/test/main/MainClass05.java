@@ -31,5 +31,9 @@ public class MainClass05 {
 		members.forEach((m)->{
 			System.out.println("번호 : " + m.num + " | 이름 : " + m.name + " | 주소 : " + m.addr);
 		});
+		for(Member mem : members) {
+			System.out.println(mem.num + " " + mem.name + " " + mem.addr);
+		};
+			
 	}
 }

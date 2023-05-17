@@ -27,6 +27,18 @@ public class MainClass03 {
 				System.out.println("얍얍");
 			}
 		});
+		useRemocon(new Remocon() {
+			
+			@Override
+			public void up() {
+				System.out.println("그아앗");
+			}
+			
+			@Override
+			public void down() {
+				System.out.println("그아아앗");
+			}
+		});
 	}
 	public static void useRemocon(Remocon r) {
 		r.up();

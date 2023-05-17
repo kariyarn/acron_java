@@ -17,11 +17,16 @@ public class MainClass07 {
 				System.out.println("더 빨리 달림");
 			}
 		});
+		useCar(new Car() {
+			@Override
+			public void drive() {
+				System.out.println("엄청빨리 달림");
+			}
+		});
 	}
 	
 	//누군가 미리 만들어 놓은 메소드
 	public static void useCar(Car c) {
-		c.drive();
 		c.drive();
 	}
 }

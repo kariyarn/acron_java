@@ -12,6 +12,7 @@ public class MainClass03 {
 		greets.add("hello");
 		greets.add("hi");
 		greets.add("good night");	
+		greets.add("bad night");
 		
 		//ArrayList 객체를 생성해서 참조값을 List 인터페이스 type 변수에 대입하기
 		List<String> greets2 = new ArrayList<>();
@@ -24,7 +25,6 @@ public class MainClass03 {
 				System.out.println("오잉 : " + t);
 			}
 		};
-
 		greets.forEach(con);
 		
 		System.out.println("------------");
@@ -39,6 +39,8 @@ public class MainClass03 {
 		greets.forEach((t)->{
 			System.out.println("오잉 3: " + t);
 		});
-		
+		greets.forEach((t)->{
+			System.out.println(t);
+		});
 	}
 }

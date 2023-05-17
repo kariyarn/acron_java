@@ -23,6 +23,12 @@ public class MainClass06 {
 				System.out.println("평화주의자라 공격안함");
 			}
 		});
+		useWeapon(new Weapon() {
+			@Override
+			public void attack() {
+				System.out.println("보이는건 죄다 공격");
+			}
+		});
 	}
 	//Weapon type의 참조값을 전달 받아서 사용하는 static메소드
 	public static void useWeapon(Weapon w) {
