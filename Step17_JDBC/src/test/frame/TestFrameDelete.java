@@ -33,7 +33,7 @@ public class TestFrameDelete extends JFrame{
 		inputNum = new JTextField(10);
 		JButton enterBtn = new JButton("입력");
 		
-		//패널에 UI를 배치하고
+		//패널에 UI를 배치하고Z
 		JPanel panel = new JPanel();
 		panel.add(lebel1);
 		panel.add(inputNum);

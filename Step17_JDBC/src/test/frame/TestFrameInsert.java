@@ -2,11 +2,14 @@ package test.frame;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -18,8 +21,8 @@ import test.dao.MemberDao;
 import test.dto.DeptDto;
 import test.dto.MemberDto;
 
-public class TestFrameInsert extends JFrame{
-	//필드
+public class TestFrameInsert extends JFrame implements ActionListener{
+	//필요한 필드 정의하기
 	JTextField inputNum;
 	JTextField inputName;
 	JTextField inputAddr;
@@ -37,11 +40,7 @@ public class TestFrameInsert extends JFrame{
 		inputNum = new JTextField(10);
 		inputName = new JTextField(10);
 		inputAddr = new JTextField(10);
-		JButton enterBtn = new JButton("전체조회");
-		JButton enterOneBtn = new JButton("한명조회");
 		JButton saveBtn = new JButton("추가");
-		JButton updateBtn = new JButton("수정");
-		JButton deleteBtn = new JButton("삭제");
 		
 		//패널에 UI를 배치하고
 		JPanel panel = new JPanel();
@@ -49,11 +48,7 @@ public class TestFrameInsert extends JFrame{
 		panel.add(inputNum);
 		panel.add(inputName);
 		panel.add(inputAddr);
-		panel.add(enterBtn);
-		panel.add(enterOneBtn);
 		panel.add(saveBtn);
-		panel.add(updateBtn);
-		panel.add(deleteBtn);
 		
 		//패널째로 프레임의 북쪽에 배치
 		add(panel, BorderLayout.NORTH);
@@ -73,14 +68,12 @@ public class TestFrameInsert extends JFrame{
 		//테이블을 프레임의 중앙에 배치한다.
 		add(scroll, BorderLayout.CENTER);
 		
-		enterBtn.addActionListener((e)->{
+		saveBtn.addActionListener((e)->{
 			try {
-				int num = Integer.parseInt(this.inputNum.getText());
 				String name = this.inputName.getText();
 				String addr = this.inputAddr.getText();
 				
 				MemberDto dto = new MemberDto();
-				dto.setNum(num);
 				dto.setName(name);
 				dto.setAddr(addr);
 				
@@ -105,5 +98,27 @@ public class TestFrameInsert extends JFrame{
 		f.setBounds(100, 100, 800, 500);
 		f.setVisible(true);
 		//TextFrame 클래스 안쪽
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+//		String cmd = e.getActionCommand();
+//		if(cmd.equals("add")) {//만일 추가 버튼을 눌렀다면
+//			//1. 입력한 이름과 주소를 읽어와서
+//			String name = this.inputName.getText();
+//			String addr = this.inputAddr.getText();
+//			//2. MemberDto 객체에 담고
+//			MemberDto dto = new MemberDto();
+//			dto.setName(name);
+//			dto.setAddr(addr);
+//			//3. MemberDto 객체의 insert() 메소드를 이용해서 DB에 실제 저장하고
+//			boolean isSuccess = new MemberDao().insert(dto);
+//			//4. 저장성공했으면 "저장했습니다"메시지를 읽어오고
+//			if(isSuccess) {
+//				JOptionPane.showMessageDialog(this, "저장했습니다.");
+//			}
+//			//5. 출력
+//		}
+		
 	}
 }
