@@ -112,12 +112,19 @@ public class TextFrameInstruc extends JFrame implements ActionListener{
             JOptionPane.showMessageDialog(this, "삭제할 행을 선택하세요!");
             return;//메소드를 여기서 끝내라(리턴)
          }
-         //선택된 row 에 해당하는 회원번호(PK) 를 얻어낸다 
-         int num=(int)model.getValueAt(selectedRow, 0);
-         //MemberDao 객체를 이용해서 회원 정보를 삭제한다.
-         new MemberDao().delete(num);
-         //JTable 을 refresh 한다.
-         displayMember();
+         
+         int asnwer = JOptionPane.showConfirmDialog(this, "정말로 삭제하시겠습니까?");
+         if(asnwer == JOptionPane.NO_OPTION || asnwer == JOptionPane.CANCEL_OPTION) {//취소
+        	 return;
+        	 //"예"버튼을 눌렀을 때만 실제로 삭제하기
+         }else if(asnwer == JOptionPane.YES_OPTION){
+             //선택된 row 에 해당하는 회원번호(PK) 를 얻어낸다 
+             int num=(int)model.getValueAt(selectedRow, 0);
+             //MemberDao 객체를 이용해서 회원 정보를 삭제한다.
+             new MemberDao().delete(num);
+             //JTable 을 refresh 한다.
+             displayMember();
+         }
       }
    }
    //TestFrame 에 메소드 추가
